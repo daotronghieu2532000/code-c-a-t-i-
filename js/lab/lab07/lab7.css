@@ -1,0 +1,38 @@
+.container{
+    width: 1200px;
+    margin: 0 auto;
+    
+}
+h2{
+    text-align: center;
+}
+.Sdt{
+    margin-left: 500px;
+}
+.nameKH {
+margin-left: 500px;
+margin-bottom: 14px;
+}
+.error-message{
+    margin-left: 500px;
+    margin-top: 10px;
+}
+.form{
+text-align: center;
+}
+table {
+border-collapse: collapse;
+width: 50%;
+margin: 0 auto;
+margin-top:20px ;
+}
+
+th, td {
+border: 1px solid black;
+padding: 8px;
+text-align: center;
+}
+.submit{
+   text-align: center;
+   margin-top: 10px;
+}

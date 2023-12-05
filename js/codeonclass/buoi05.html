@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="hoa">
+        <p>Hoa lan</p>
+        <p>Hoa hong</p>
+        <p>Hoa dao</p>
+    </div>
+
+
+    <script type="text/javascript">
+        var divHoa = document.getElementById("hoa");
+        
+        var pHoahong = divHoa.firstChild;
+        alert(pHoahong.nextSibling.childNodes[0].nodeValue);
+    </script>
+    
+</body>
+</html>

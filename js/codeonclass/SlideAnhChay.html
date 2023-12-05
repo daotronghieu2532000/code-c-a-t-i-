@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            background-image: url('https://toquoc.mediacdn.vn/2019/6/26/photo-1-1561514553684677883269.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+
+        }
+        .container{
+            width: 2700px;
+            margin: 0 auto;
+            
+        }
+        #anh{
+            border: 2px red solid;
+            border-radius: 100px;
+            height: 1600px;
+            text-align: center;
+        }
+        h1 {
+            text-align: center;
+            font-size: 100px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <h1>Happier</h1>
+    <img id="anh" src="/img/japan.1.jpg" alt="">
+    
+    <script>
+     
+        var arrAnh = ["/img/japan.1.jpg", "/img/japan.2.jpg","/img/japan5.jpg","/img/japan6.jpg","/img/japan10.jpg", "/img/japan4.jpg"];
+        
+        // Lấy phần tử DOM có id "anh" và lưu vào biến imgAnh
+        var imgAnh = document.getElementById("anh");
+        
+        // Khởi tạo biến i với giá trị là 0
+        var i = 0;
+        
+        // Lấy độ dài của mảng arrAnh và lưu vào biến N
+        var N = arrAnh.length;
+        
+        // Đặt đường dẫn của phần tử imgAnh là hình ảnh đầu tiên trong mảng
+        imgAnh.src = arrAnh[i];
+        
+        // Định nghĩa một hàm có tên là "slide"
+        function slide() {
+            // Tăng giá trị của i lên 1
+            i++;
+            
+            // Kiểm tra nếu i lớn hơn chỉ số cuối cùng của mảng
+            if (i > N-1) {
+                // Nếu đúng, đặt lại giá trị i về 0 (bắt đầu lại từ hình ảnh đầu tiên)
+                i = 0;
+            }
+            // Đặt đường dẫn của phần tử imgAnh là hình ảnh hiện tại trong mảng
+            imgAnh.src = arrAnh[i];
+        }
+        
+        // Thiết lập một hàm setInterval gọi hàm slide mỗi 1000 miligiây (1 giây)
+        setInterval(slide, 1000);
+    </script>
+    </div>
+</body>
+</html>

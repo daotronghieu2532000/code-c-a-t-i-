@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="lab7.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2>Đơn Hàng</h2>
+      <div class="nameKH">
+        Tên Khách Hàng <input type="text" id="tenKH" required />
+      </div>
+      <div class="Sdt">
+        Số Điện Thoại <input type="tel" id="soDienThoai" required />
+      </div>
+      <div class="error-message" id="error-message" style="color: red;"></div>
+      <table>
+        <thead>
+          <tr>
+            <th>STT</th>
+            <th>Tên</th>
+            <th>Giá Sản Phẩm</th>
+            <th>Số lượng</th>
+            <th>Thành Tiền</th>
+          </tr>
+        </thead>
+        <tboddy>
+          <tr>
+            <td>1</td>  
+            <td>Bánh Mì</td> 
+            <td>20.000</td>  
+            <td><input class="So-luong" onclick="Thaydoimony()"type="number" min="1"/></td>
+            <td class="Thanh-tien">20.000</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Kẹo Hồ Lô</td>
+            <td>1.000</td>
+            <td><input class="So-luong" onclick="Thaydoimony()" type="number" min="1"/></td>
+            <td class="Thanh-tien">1.000</td>
+          </tr>
+            <td>3</td>
+            <td>Bánh Quy</td>
+            <td>5.000</td>
+            <td>
+              <input class="So-luong" onclick="Thaydoimony()"type="number" min="1"/></td>
+            <td class="Thanh-tien">5.000</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="4">Tổng Tiền</td>
+            <td>26.000</td>
+           
+          </tr>
+        </tfoot>
+      </table>
+      <div class="submit"><input type="button" value="Đặt Mua" onclick="validateOrder()" /></div>
+    </div>
+    <script >
+    function Thaydoimony() {
+    }
+ function validateOrder() {
+  var tenKH = document.getElementById("tenKH").value;
+  var soDienThoai = document.getElementById("soDienThoai").value;
+
+  var errorMessage = document.getElementById("error-message");
+  if (tenKH === "" || soDienThoai === "") {
+    errorMessage.textContent = 'Bắt buộc phải nhập cả "tên" và "số điện thoại"';
+  } else {
+    errorMessage.textContent = ""; 
+  }
+}
+
+    </script>
+  </body>
+</html>

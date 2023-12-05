@@ -1,0 +1,211 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    
+    background: #d6d2d2;
+    background-image: url('https://caodang.fpt.edu.vn/wp-content/uploads/FPT_Polytechnic_Hanoi.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment:fixed;
+    background-size: 100%;
+}
+
+.container {
+    width: 1400px;
+    margin: 0 auto;
+   background-color: #9ed5f6;
+
+
+}
+
+.header {
+
+    display: flex;
+    background-image: url('https://blogcdn.muaban.net/wp-content/uploads/2022/07/26112705/cao-dang-fpt-polytechnic.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+
+
+}
+
+.header ul li {
+    float: left;
+    list-style: none;
+    margin-left: 50px;
+    margin-top: 120px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.header ul li :hover {
+    color: #ee5716;
+    transform: scale(1.5);
+}
+
+.timkiem {
+    margin-left: 80px;
+    margin-top: 120px;
+}
+
+.ongvang img {
+    width: 150px;
+    height: 100px;
+    margin: 10px 10px;
+}
+
+.banner img {
+    width: 100%;
+
+}
+
+.bannerso2 {
+    display: flex;
+
+    justify-content: space-between;
+}
+
+.text1 h1 {
+    color: tomato;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.bannerso2 ul li {
+    font-size: 19px;
+    margin-top: 60px;
+    list-style: none;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.bannerso3 {
+    width: 100%;
+    height: auto;
+}
+
+.text2 {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.text2 h1,
+p {
+    text-align: center;
+    font-size: 20px;
+}
+
+h1 {
+    text-decoration: underline;
+}
+
+.box1 img {
+    width: 90%;
+    margin-left: 20px;
+}
+
+.bannerso3-img img:hover {
+    opacity: 0.7;
+    filter: alpha(opacity=100);
+}
+
+.box1 p {
+    text-align: center;
+}
+
+.box1 {
+    width: 30%;
+    float: left;
+    margin-left: 35px;
+    margin-top: 20px;
+}
+
+.box1 li {
+    margin: 38px 30px 30px 50px;
+    font-size: 20px;
+}
+
+.box1 li a {
+    text-decoration: none;
+}
+
+.box1 li a:hover {
+    color: #ef7b22;
+}
+
+.banner-4 img {
+    width: 100%;
+}
+
+.footer {}
+
+.footer-main {
+    background: #4b42ce;
+    background-image:
+        url('https://img5.thuthuatphanmem.vn/uploads/2022/01/16/logo-truong-fpt_043152255.png');
+    background-position: top;
+    background-size: 50%;
+    background-repeat: no-repeat;
+    opacity: 0.9;
+}
+
+.footer-img img {
+    margin-left: 30px;
+    margin-top: 10px;
+
+
+}
+
+.footer-img img:hover {
+    border: red solid;
+    border-radius: 10px;
+
+}
+
+.footer-img {
+    width: 25%;
+
+}
+
+.chinhanh {
+    margin-top: 30px;
+    padding-bottom: 30px;
+    color: rgb(241, 241, 241);
+}
+
+.chinhanh p:hover {
+    color: #080808;
+    transform: scale(1.1);
+}
+
+
+.chinhanh a {
+    color: #ff864e;
+}
+
+.chinhanh1 {
+    margin-top: 30px;
+
+}
+
+.chinhanh3 {
+    margin-top: 30px;
+}
+
+.chinhanh4 {
+    margin-top: 30px;
+}
+
+.chinhanh5 {
+    margin-top: 30px;
+
+}
+
+
+.end {
+
+    background: #ef7b22;
+    color: rgb(8, 9, 10);
+    text-align: center;
+}

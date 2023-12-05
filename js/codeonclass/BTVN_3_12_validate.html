@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validate form 07</title>
+    <style>
+        .container{
+            width: 1000px;
+            margin: 0 auto;
+            margin-top: 30px;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="#" onsubmit="validate(); return true;"> 
+            <!-- return false để tránh việc gửi form đi khi ngừời dùng nhập chưa hợp lệ  . Xóa Cũng được .-->
+            <!-- Thêm thuộc tính onsubmit để kích hoạt hàm kiểm tra khi form được gửi -->
+            <div class="item">
+                <div class="lbl"><label for="username">Username</label></div>
+                <div class="subItem"><input type="text" placeholder="Username" id="username"></div>
+                <div id="username-error" style="color: red;"></div>
+            </div>
+            <div class="item">
+                <div class="lbl"><label for="password1">Mật khẩu</label></div>
+                <div class="subItem"><input type="password" placeholder="Mật khẩu" id="password1"></div>
+                <div id="password1-error" style="color: red;"></div>
+                
+            </div>
+            <div class="item">
+                <div class="lbl"><label for="password2">Nhập lại mật khẩu</label></div>
+                <div class="subItem"><input type="password" placeholder="Nhập lại mật khẩu" id="password2"></div>
+                <div id="password2-error" style="color: red;"></div>
+            </div>
+            <br>
+            <input type="submit" name="" id="btnRegister" value="Đăng ký">
+        </form>
+    </div>
+    <script>
+        function validate() {
+            let username = document.querySelector("#username").value;
+            let usernameError = document.querySelector("#username-error");
+            let password1 = document.querySelector("#password1").value;
+            let password1Error = document.querySelector("#password1-error");
+            let password2 = document.querySelector("#password2").value;
+            let password2Error = document.querySelector("#password2-error");
+            if (username === "") {
+                usernameError.innerHTML = "Bắt buộc phải điền vào mục này";
+            } else {
+                usernameError.innerHTML = "";
+                // hoặc usernameError.textContent đều được . 
+            }
+//---------------------------------------------------------------------------------------
+            if (password1 === "") {
+                password1Error.innerHTML = "Bắt buộc phải điền vào mục này";
+            } else {
+                password1Error.innerHTML = "";
+            }
+//---------------------------------------------------------------------------------------
+            if (password2 === "") {
+                password2Error.innerHTML = "Bắt buộc phải điền vào mục này";
+            } else if (password1 !== password2) {
+                password2Error.innerHTML = "Mật khẩu không trùng khớp";
+            } else {
+                password2Error.innerHTML = "";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        #form-container {
+            text-align: center;
+        }
+
+        #result {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="form-container">
+    <h2>Đăng Nhập</h2>
+    <form id="myForm">
+        <label for="name">Tên 1:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+        <br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+        <button type="button" onclick="validateForm()">Submit</button>
+    </form>
+
+    <div id="result"></div>
+</div>
+
+<script> 
+function validateForm() {
+    let name = document.getElementById('name').value;
+    let email = document.getElementById('email').value;
+    let resultContainer = document.getElementById('result');
+
+    if (name.trim() === '' || email.trim() === '') {
+        resultContainer.innerHTML = '<p style="color: red;">Vui lòng nhập đầy đủ thông tin.</p>';
+    } else if (!isValidEmail(email)) {
+        resultContainer.innerHTML = '<p style="color: red;">Email không hợp lệ.</p>';
+    } else {
+        resultContainer.innerHTML = '<p style="color: green;"> submit thành công!</p>';
+        
+    }
+}
+
+function isValidEmail(email) {
+    // Kiểm tra định dạng email sử dụng biểu thức chính quy
+    let Kieu_email = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return Kieu_email.test(email);
+}
+</script>
+
+</body>
+</html>

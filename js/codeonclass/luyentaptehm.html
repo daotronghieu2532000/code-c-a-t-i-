@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+   <form action="#">
+     <div class="san-pham">Chọn Sản Phẩm
+       <select name="" id="SanPham">
+        <option value="" hidden>-- Mời chọn loại</option>
+         <option value="10000">Loại 1 (10000 đ)</option>
+         <option value="20000">Loại 2 (20000 đ)</option>
+         <option value="30000">Loại 3 (30000 đ)</option>
+       </select>
+    </div>
+     <br>
+    <div class="Gia-Tien"> Giá Tiền
+    <input type="text" placeholder="Giá Tiền" id="GiaTien" readonly required>
+    </div><br>
+    <div class="Phi-ship">
+         <input type="radio" name="aaa" id="id1"> Nội Thành |
+          <input type="radio" name="aaa" id="id2"> Ngoại Thành <br>
+         <input type="text" placeholder="Phí Ship" id="PhiShip" readonly>
+    </div>  <br>
+    <div class="Tong">
+        Tổng Tiền <input type="text" placeholder="Tổng tiền" id="TongTien" readonly>
+    </div>
+   </form>
+</div>    
+<script>
+  var SanP = document.querySelector('#SanPham')
+  var GiaTien = document.querySelector('#GiaTien')
+  var NoiThanh = document.querySelector('#id1')
+  var NgoaiThanh = document.querySelector('#id2')
+  var PhiShip = document.querySelector('#PhiShip')
+  var TongTien = document.querySelector('#TongTien')
+
+  SanP.addEventListener("change", function(){
+      GiaTien.value = SanP.value 
+      tinhtong();
+  });
+
+  NoiThanh.addEventListener("change", function () {
+      PhiShip.value = 0;
+      tinhtong();
+  });
+
+  NgoaiThanh.addEventListener("change", function () {
+      PhiShip.value = 50000 ;
+      tinhtong();
+  });
+
+  function tinhtong(){
+      TongTien.value = Number(GiaTien.value) + Number(PhiShip.value) + ' ' +'Vnđ';
+  }
+</script>
+</body>
+</html>

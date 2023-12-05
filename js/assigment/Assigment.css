@@ -1,0 +1,137 @@
+.container {
+  width: 1200px;
+}
+.Box1-content {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  margin-left: 140px;
+
+}
+.img-1 {
+  margin-left: 0px;
+}
+.img-2 {
+  margin-left: 250px;
+  
+}
+.login{
+  margin-left:50px ;
+  
+}
+.vn{
+  margin-left: 30px;
+}
+.img-3{
+  margin-left: 90px;
+}
+
+#slide {
+  width: 1000px;
+  margin: 0 auto;
+  height: 350px;
+  position: relative;
+  display: flex;
+}
+#slide #hinh {
+  height: 100%;
+}
+#slide #mota {
+  position: absolute;
+  top: 90%;
+  left: 40%;
+  font-size: 1.2em;
+}
+i {
+  font-size: 50px;
+  margin-top: 150px;
+  color: #555;
+  cursor: pointer;
+}
+i.active {
+  color: #7b7979;
+}
+.dot-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  margin-left: 220px;
+}
+.dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #555;
+  margin: 0 5px;
+  cursor: pointer;
+  margin-left: 40px;
+}
+.dot.active {
+  background-color: #509f64;
+}
+.login,
+.en {
+  text-decoration: none;
+  
+}
+.vn {
+  text-decoration: none;
+  text-decoration: none;
+  color: #125f2f;
+}
+.content{
+    display: flex;
+    margin-left: 250px;
+    margin-top: 40px;
+}
+.sanpham-chinh {
+    width:  50%;  
+    
+}
+
+.img-big{
+    width: 40%;
+    height: 65%;
+    margin-left: 30px;
+    
+}
+.sososo{
+  height: 100%;
+ 
+}
+
+.img-con{
+  width: 20%;
+  height: 15%; 
+}
+
+
+
+.chitiet-sanpham{
+    width:  50%;  
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.size button{
+  margin-left: 20px;
+}
+.text-in{
+  width: 50%;
+  height: 80px;
+  border: 2px black solid;
+  margin-left: 100px;
+}
+

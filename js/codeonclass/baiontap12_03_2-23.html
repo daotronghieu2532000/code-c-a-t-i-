@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validate form 05</title>
+    <link rel="stylesheet" href="./css/validate11.css">
+</head>
+<body>
+    <div class="container" style="width:400px;">
+        <form action="">
+            <div class="item">
+                <div class="lbl"><label for="typeSP">Loại sản phẩm</label></div>
+                <select name="" id="typeSP">
+                    <option value="" hidden>-- Mời chọn loại</option>
+                    <option class="op1" value="10000">Loại 1 (10000 đ)</option>
+                    <option class="op2" value="20000">Loại 2 (20000 đ)</option>
+                    <option class="op3" value="30000">Loại 3 (30000 đ)</option>
+                </select>
+                <div id="input1"><input  type="radio" name="aaa" id="checkbox">Nội thành</div>
+                <div id="input2"><input  type="radio" name="aaa" id="checkbox">ngoại Thành</div>
+                <input type="number" placeholder="Phí ship hàng" id="phiShip" readonly>
+            </div>
+            <div class="item">
+                <div class="lbl"><label for="giaSP">Giá sản phẩm</label></div>
+                <input type="number" placeholder="Giá sản phẩm" id="giaSP" readonly>
+            </div>
+            <input type="number" placeholder="Tổng tiền" id="tongTien" readonly>
+        </form>
+    <script>
+
+     var typeSP = document.querySelector('#typeSP')
+     var giaSP = document.querySelector('#giaSP')
+     var NoiThanh = document.querySelector('#input1')
+     var NgoaiThanh = document.querySelector('#input2')
+     var Sum = document.querySelector('#tongTien')
+     var PhiShip = document.querySelector('#phiShip')
+     
+     typeSP.addEventListener("change", function(){
+        giaSP.value = typeSP.value;
+        tinhtong();
+     });
+     NoiThanh.addEventListener("change" , function(){
+        PhiShip.value = 0
+        tinhtong();
+     })
+     NgoaiThanh.addEventListener("change" , function(){
+        NgoaiThanh.value = 50000;
+        PhiShip.value = NgoaiThanh.value
+        tinhtong();
+     })
+     function tinhtong(){
+      Sum.value = Number(giaSP.value) + Number(PhiShip.value) 
+     }
+
+    </script>
+</body>
+</html>
