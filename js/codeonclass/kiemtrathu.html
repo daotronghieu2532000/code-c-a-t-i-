@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="#" onsubmit="validation()">
+            <h3>Hóa đơn</h3>
+            <div>Khách Hàng <input type="text" id="khachHang"></div>
+            <div id="KH-error" style="color: red;"></div>
+            <div class="luachon">Loại Hàng 
+                <select name="" id="option">
+                    <option value="20000">Loại 1</option>
+                    <option value="30000">Loại 2</option>
+                    <option value="50000">Loại 3</option>
+                </select>
+            </div>
+            <div>Đơn Giá <input type="text" name="" id="DonGia" readonly></div>
+            <div>Nơi Nhận Hàng 
+                <input type="radio" name="aaa" id="NoiThanh">-Nội Thành
+                <input type="radio" name="aaa" id="NgoaiThanh">-Ngoại Thành
+            </div>
+            <div>Phí Vận Chuyển <input type="text" name="" id="PhiShip" readonly> </div>
+            <div>Số Lượng  <input type="number" name="quantity" min="0" max="30" id="SoLuong"></div>
+            <div>Thành Tiền <input type="text" name="" id="TongTien" readonly></div>
+            <input type="submit" value="Đặt Mua"  id="nutbam"> 
+        </form>
+    </div>
+    <script>
+     
+
+     var SanPham = document.querySelector('#option');
+     var DonGia = document.querySelector('#DonGia');
+
+     var NoiThanh = document.querySelector('#NoiThanh');
+     var NgoaiThanh = document.querySelector('#NgoaiThanh');
+
+     var PhiVC = document.querySelector('#PhiShip');
+     var SoLuong = document.querySelector('#SoLuong');
+     var ThanhTien =document.querySelector('#TongTien');
+    console.log(ThanhTien)
+  
+    function validation(){
+     var khachHang = document.querySelector('#khachHang').value;
+     var ThongBao = document.querySelector('#KH-error');
+     if(khachHang === ""){
+            ThongBao.innerHTML = "Bắt buộc phải nhập dòng này";
+            return false; 
+        } else {
+            ThongBao.innerHTML = "";
+            return true; 
+        }
+    }
+    SanPham.addEventListener("change", function(){
+         DonGia.value = SanPham.value;
+    });
+    NoiThanh.addEventListener("click", function(){
+        PhiVC.value = 0;
+        
+         
+    })
+    
+    NgoaiThanh.addEventListener("click", function(){
+        PhiVC.value = 50000;
+      
+        
+    })
+    SoLuong.addEventListener("click", function(){
+        if(SoLuong.value <= 0){
+            SoLuong.value = 0;
+        }
+       
+    });
+
+    function ThanhTien(){
+        ThanhTien.value = Number(SoLuong.value) * Number(DonGia.value) + Number(PhiVC.value) + 'Vnđ';
+    }
+    </script>
+</body>
+</html>

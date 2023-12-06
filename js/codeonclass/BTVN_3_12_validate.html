@@ -22,7 +22,8 @@
             <div class="item">
                 <div class="lbl"><label for="username">Username</label></div>
                 <div class="subItem"><input type="text" placeholder="Username" id="username"></div>
-                <div id="username-error" style="color: red;"></div>
+                <div id="username-error" st
+                yle="color: red;"></div>
             </div>
             <div class="item">
                 <div class="lbl"><label for="password1">Mật khẩu</label></div>
@@ -48,14 +49,15 @@
             let password2 = document.querySelector("#password2").value;
             let password2Error = document.querySelector("#password2-error");
             if (username === "") {
-                usernameError.innerHTML = "Bắt buộc phải điền vào mục này";
+                usernameError.innerHTML = "Bắt buộc nhập tên Tài Khoản";
             } else {
                 usernameError.innerHTML = "";
                 // hoặc usernameError.textContent đều được . 
+
             }
 //---------------------------------------------------------------------------------------
             if (password1 === "") {
-                password1Error.innerHTML = "Bắt buộc phải điền vào mục này";
+                password1Error.innerHTML = "Mật Khẩu không được bỏ trống";
             } else {
                 password1Error.innerHTML = "";
             }
