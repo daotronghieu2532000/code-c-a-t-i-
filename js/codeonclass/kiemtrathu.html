@@ -33,7 +33,8 @@
         </form>
     </div>
     <script>
-     
+     var khachHang = document.querySelector('#khachHang');
+     var ThongBao = document.querySelector('#KH-error');
 
      var SanPham = document.querySelector('#option');
      var DonGia = document.querySelector('#DonGia');
@@ -47,40 +48,41 @@
     console.log(ThanhTien)
   
     function validation(){
-     var khachHang = document.querySelector('#khachHang').value;
-     var ThongBao = document.querySelector('#KH-error');
-     if(khachHang === ""){
-            ThongBao.innerHTML = "Bắt buộc phải nhập dòng này";
+
+     if(khachHang.value === ""){
+            ThongBao.textContent = "Bắt buộc phải nhập dòng này";
             return false; 
         } else {
-            ThongBao.innerHTML = "";
+            ThongBao.textContent = "";
             return true; 
         }
-    }
+        
+    } 
     SanPham.addEventListener("change", function(){
          DonGia.value = SanPham.value;
+        TongTien();
     });
-    NoiThanh.addEventListener("click", function(){
+    NoiThanh.addEventListener("change", function(){
         PhiVC.value = 0;
-        
+        TongTien();
          
-    })
-    
-    NgoaiThanh.addEventListener("click", function(){
+    }) 
+    NgoaiThanh.addEventListener("change", function(){
         PhiVC.value = 50000;
       
-        
+        TongTien();
     })
-    SoLuong.addEventListener("click", function(){
-        if(SoLuong.value <= 0){
+    SoLuong.addEventListener("change", function(){
+        if(SoLuong.value < 0){
             SoLuong.value = 0;
         }
-       
+        TongTien();
     });
-
-    function ThanhTien(){
+    
+    function TongTien(){
         ThanhTien.value = Number(SoLuong.value) * Number(DonGia.value) + Number(PhiVC.value) + 'Vnđ';
     }
+ 
     </script>
 </body>
 </html>

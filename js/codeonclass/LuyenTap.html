@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container" >
+        <form action="#" onsubmit="return validate()">
+        <h1>Hóa Đơn</h1>
+        <div>Khách Hàng <input  type="text" placeholder="Hãy điền tên" id="KhachHang"></div>
+        <div id="error1" style="color: red;"></div>
+        <div>Số Điện Thoại <input  type="text" name="email" id="Email" placeholder="Nhập Số ĐT"></div>
+        <div id="error2" style="color: red;"></div>
+        <div>Loại Hàng 
+            <select id="LoaiHang" > 
+                <option value="" hidden> Mời chọn loại</option>
+             <option value="2000">2000</option>
+             <option value="4000">4000</option>
+             <option value="6000">6000</option>
+            </select>
+        </div>
+        <div>Đơn Giá <input type="text" name="" id="DonGia" readonly></div>
+        <div> Vận Chuyển <br>
+            <input type="radio" value="aaa" id="NoiThanh">Nội Thành 
+            <input type="radio" value="aa" id="NgoaiThanh">Ngoại Thành
+        </div>
+        <div>Phí Vận Chuyển <input type="text" name="" id="Ship" readonly></div>
+         <div>Số Lượng <input type="number" min="0" name="" id="SoLuong" ></div>
+         <div>Tổng Tiền Thanh Toán <input readonly type="text" name="" id="TongTien"></div>
+         <div><input type="submit"  value="Thanh Toán" name="ThanhToan" id="submit"></div>
+        </form>
+    
+    </div>
+    <script>
+       var KhachHang = document.querySelector('#KhachHang');
+       var error1  = document.querySelector('#error1');
+       var error2  = document.querySelector('#error2');
+       var SoDT = document.querySelector('#Email');
+       var LoaiHang = document.querySelector('#LoaiHang');
+       var GiaTien = document.querySelector('#DonGia');
+       var PhiShip = document.querySelector('#Ship');
+       var NoiThanh = document.querySelector('#NoiThanh');
+       var NgoaiThanh = document.querySelector('#NgoaiThanh');
+       var SoLuong = document.querySelector('#SoLuong');
+       var TongTien = document.querySelector('#TongTien');
+       var ThanhToan = document.querySelector('#submit');
+           console.log(error2);
+        
+
+        function validate(){
+            if(KhachHang.value === "") {
+                error1.innerHTML = 'Hãy nhập tên';
+                return false;
+            } else {
+                error1.innerHTML = "" ;
+             
+                return true;
+            }
+            if (SoDT.value === "") {
+                error2.innerText = 'Hãy nhập Số Điện Thoại';
+            } else {
+                 error2.innerText = "";
+            }
+
+        }
+        LoaiHang.addEventListener("change", function () {
+            if (LoaiHang.value !== "") {
+                GiaTien.value = LoaiHang.value;
+                TinhTong();
+            }
+        })
+        NoiThanh.addEventListener("change", function () {
+            
+                PhiShip.value = 0;
+                TinhTong();
+            
+        })
+        NgoaiThanh.addEventListener("change", function () {
+           
+                PhiShip.value = 5000;
+                TinhTong();
+            
+        })
+        SoLuong.addEventListener("change" , function(){
+             if(SoLuong.value < 0 ){
+                SoLuong.value = 0 ;
+             }
+             TinhTong();
+        })
+        function TinhTong(){
+            TongTien.value = Number(GiaTien.value)* Number(SoLuong.value) + Number(PhiShip.value);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+    />
+</head>
+<body>
+    <div>
+        <input type="text" id="previon" value="◀" onclick="prebtn()">
+        <img src="/img/image/img2.jpg" id="anh" alt="lỗi ảnh">
+        <input type="text" id="next" value="▶" onclick="nextbtn()"> 
+    </div>
+    <script>
+        var arrAnh = [
+        "/img/image/img3.jpg",
+        "/img/image/img4.jpg"
+        ];
+        var prev = document.querySelector('#previon');
+        var nextt = document.querySelector('#next');
+        var anh = document.querySelector('#anh');
+        var i = 0 ;
+        var n = arrAnh.length -1;
+
+        function nextbtn(){
+            if(i > 0 ){
+                i--;
+            }else {
+                i = n;
+            }
+            anh.src = arrAnh[i];
+        }
+        function prebtn(){
+            if(i < 0){
+                i++;
+            }else{
+                i = 0 ;
+            }
+            anh.src = arrAnh[i];
+        }
+ setInterval(nextbtn,2000);
+
+
+    </script>
+</body>
+</html>

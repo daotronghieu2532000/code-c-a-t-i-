@@ -1,32 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Form Đăng Nhập</title>
-    <link rel="stylesheet" href="validate.css" />
-  </head>
-  <body>
-    <div container>
-      <div class="form-gp">
-        <label for="fullname" class="form-lb">Tài Khoản </label> <br />
-        <input
-          type="text"
-          id="fullname"
-          name="fullname"
-          placeholder="VD: tronghieu34fa"
-        />
-        <span class="form-masage"></span>
-      </div>
-      <br />
-      <div class="form-gp">
-        <label for="password" class="form-lb">Mật Khẩu </label> <br />
-        <input type="password" id="password" name="password" />
-        <span class="form-masage"></span>
-      </div>
-      <br />
-      <button class="submid">Đăng Nhập</button>
-      <button class="Dang-Ki">Đăng Kí</button>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập</title>
+    <style>
+        .error-message {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h2>Form Đăng Nhập</h2>
+    <form id="loginForm">
+        <label for="username">Tài khoản:</label>
+        <input type="text" id="username" name="username">
+        <span id="usernameError" class="error-message"></span><br>
+
+        <label for="password">Mật khẩu:</label>
+        <input type="password" id="password" name="password">
+        <span id="passwordError" class="error-message"></span><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+        <span id="emailError" class="error-message"></span><br>
+
+        <input type="button" value="Đăng nhập" onclick="validateForm()">
+    </form>
+</body>
+</html>
+
+      <script>
+function validateForm() {
+
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
+    var email = document.getElementById('email').value;
+ 
+    let usernameerror =document.getElementById('usernameError')
+    let passwworderr=document.getElementById('passwordError')
+    let emailerr =document.getElementById('emailError')
+ 
+    if (username === '') {
+        usernameerror.innerText = 'Vui lòng nhập tài khoản.';
+    }
+    if (password === '') {
+        passwworderr.innerText = 'Vui lòng nhập mật khẩu.';
+    }
+    if (email === '') {
+       emailerr.innerText = 'Vui lòng nhập email.';
+    }
+    if (username !== '' && password !== '' && email !== '') {
+        alert('Đăng nhập thành công!');
+    }
+}
+      </script>
+
+
       <script src="validate.js"></script>
     </div>
   </body>

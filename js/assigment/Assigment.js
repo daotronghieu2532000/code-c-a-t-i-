@@ -50,7 +50,7 @@ var giaTien = document.querySelector('.Gia-tien');
 
 
 
-function Thaydoisize(thaydoi) {
+function Thaydoisize(event) {
   chonsize = event.target;
 
 if (chonsize == sizeM) {

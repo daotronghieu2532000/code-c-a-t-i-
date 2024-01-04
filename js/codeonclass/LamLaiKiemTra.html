@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+<body>
+  <div class="container">
+    <form action="">
+      <h2>Đổi Mật Khẩu</h2>
+      <div>Tên Đăng Nhập <input type="text" id="ten" /></div>
+      <div id="err1" style="color: red;"></div> <!-- Sửa: Xóa số 1 -->
+      <div>Mật khẩu cũ <input type="password" id="mkcu" /></div> <!-- Sửa: Đổi type thành password để ẩn mật khẩu -->
+      <div id="err2" style="color: rgb(51, 230, 69);"></div>
+      <div>Mật khẩu mới <input type="password" id="mkmoi" /></div> <!-- Sửa: Đổi type thành password để ẩn mật khẩu -->
+      <div id="err3" style="color: rgba(21, 25, 236, 0.61);"></div>
+      <div>Nhập lại MK <input type="password" id="nhaplai" /></div> <!-- Sửa: Đổi type thành password để ẩn mật khẩu -->
+      <div id="err4" style="color: rgb(53, 237, 237);"></div>
+      <button type="button" id="doimk" onclick="validation()">Đổi mật khẩu</button> <!-- Sửa: Đổi type thành button -->
+    </form>
+  </div>
+  <script>
+    var TenDN = document.querySelector('#ten');
+    var err1 = document.querySelector('#err1');
+    var mkcu = document.querySelector('#mkcu');
+    var err2 = document.querySelector('#err2');
+    var mkmoi = document.querySelector('#mkmoi');
+    var err3 = document.querySelector('#err3');
+    var mkmoi2 = document.querySelector('#nhaplai');
+    var err4 = document.querySelector('#err4');
+
+    function validation() {
+      // Sửa: Thêm cờ isValid để kiểm soát việc submit
+      var isValid = true;
+
+      if (TenDN.value === '') {
+        err1.innerHTML = 'Hãy Nhập Tên';
+        isValid = false;
+      } else {
+        err1.innerHTML = '';
+      }
+
+      if (mkcu.value === '') {
+        err2.innerHTML = 'Hãy Nhập Mk Cũ';
+        isValid = false;
+      } else {
+        err2.innerHTML = '';
+      }
+
+      if (mkmoi.value === '') {
+        err3.innerHTML = 'Hãy Nhập MK Mới';
+        isValid = false;
+      } else {
+        err3.innerHTML = '';
+      }
+
+      if (mkmoi2.value === '') {
+        err4.innerHTML = 'Hãy Nhập Lại MK';
+        isValid = false;
+      } else if (mkmoi2.value !== mkmoi.value) {
+        err4.innerHTML = 'Mật khẩu không trùng khớp';
+        isValid = false;
+      } else {
+        err4.innerHTML = '';
+      }
+
+      // Sửa: Thêm kiểm tra isValid trước khi thực hiện hành động
+      if (isValid) {
+        check();
+      }
+    }
+
+    function check() {
+      var checks = 'absC@ahihi';
+      if (mkcu.value !== checks) {
+        alert('Mật khẩu cũ sai !');
+      } else {
+        alert('Đổi mật khẩu thành công!');
+      }
+    }
+  </script>
+</body>
+</html>
