@@ -20,7 +20,7 @@ public class luyentap02 {
             System.out.println("La So Nguyen To");
         } else {
             System.out.println("Khong Phai La So Nguyen To");
-
+            
         }
     }
 }

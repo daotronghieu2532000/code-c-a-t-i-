@@ -1,4 +1,5 @@
 package Java;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class luyentap4 {
@@ -31,17 +32,26 @@ public class luyentap4 {
   public float TinhTongTien(){
         return giaTien1kg * soKg;
   }
-
+     public boolean  khoiluonglonhon20( double khoiluong){
+      return this.soKg > khoiluong;
+  }
+  public double  soTienduocgiam(double x){
+    if(this.TinhTongTien()>1200000){
+        return (x/100)*this.TinhTongTien();
+    }else{
+        return 0;
+     }
+    }
+        
+     
       public static void main(String[] args) {
           luyentap4 lt = new luyentap4("Trung Nguyên", 100000, 10);
+        
           System.out.println("Tong tien : " + lt.TinhTongTien());
           System.out.println("Ten Ca Phe :" + lt.tencaPhe);
           System.out.println("Gia Tien / 1Kg :" + lt.giaTien1kg);
-         
-          int soluongmua = 0 ;
-          Scanner sc = new Scanner(System.in);
-          for (int i = 0 ; i < soluongmua ; i++){
-
-          }
+          System.out.println("Khoi luong lon hon so nhap khong" + lt.khoiluonglonhon20(5.5));
+          System.out.println("So Tien Duoc Giam :" + lt.soTienduocgiam(10));
+          
       }
 }

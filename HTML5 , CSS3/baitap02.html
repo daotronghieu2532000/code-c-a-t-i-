@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #hinhso1{
+            stroke-width: 8px;
+            fill: rgb(244, 244, 29);
+            stroke: blue;
+            
+        }
+    
+    </style>
+</head>
+<body>
+<!-- --------------------Hình Chữ Nhật 1------------------------ ---->
+    <div>
+        <svg width="200px" height="200px" id="hinh1"  style="background-color: rgb(216, 212, 212); 
+        ">
+        
+          <rect x="20" y="20" rx="10" ry="10" width="150" height="150"   id="hinhso1" />
+        </svg>
+    </div>
+<!-- ---------------------Hình Chữ Nhật------------------------- --->
+
+<!-- --------------------Ellipse Tuyến Tính 2------------------------->
+    <div>
+        <svg height="150" width="400">
+            <defs>
+              <linearGradient id="grad2" x1="100%" y1="70%" x2="10%" y2="100%">
+                <stop offset="20%" style="stop-color:rgb(211, 230, 2);stop-opacity:0.8" />
+                <stop offset="50%" style="stop-color:rgb(255, 165, 0);stop-opacity:0.7"/>
+                <stop offset="70%" style="stop-color:rgb(124, 194, 50);stop-opacity:0.6" />
+              </linearGradient>
+            </defs>
+            <ellipse cx="200" cy="80" rx="155" ry="55" fill="url(#grad2)" />
+            <text fill="#ffffff" font-size="45" font-family="Verdana" x="150" y="96">Hiếu</text>
+        </svg>
+    </div>
+<!-- --------------------Ellipse Tuyến Tính------------------------ -->
+
+<!-- --------------------Sao 5 cánh 3------------------------ ---------->
+    <div>
+        <svg height="210" width="500">
+                <polygon points="100,10 40,198 190,78 10,78 160,198"
+                style="fill:rgb(234, 62, 200);stroke:rgb(8, 8, 8);stroke-width:5;fill-rule:evenodd" />
+         </svg>
+    </div>
+<!-- ---------------------Sao 5 cánh------------------------ --------->
+
+
+<!-- ---------------------CanVas------------------------------ ------->
+    <div>
+        <canvas style="background-color: rgb(127, 226, 226);" id="ve_hinh" width="200px" height="200px">
+        </canvas>
+    </div>
+
+    <div>
+        <canvas style="background-color: rgb(232, 228, 228);" id="ve_hinh2" width="200px" height="130px">
+        </canvas>
+    </div>
+    <div>
+        <canvas style="background-color: rgb(127, 226, 226);" id="ve_hinh3" width="200px" height="120px">
+        </canvas>
+    </div>
+<!-- ---------------------CanVas------------------------------ -->
+
+
+    <script>
+        var veHinh = document.querySelector("#ve_hinh");
+        var mk = veHinh.getContext("2d");
+        
+        mk.globalAlpha = 0.7; // Độ trong suốt
+
+        mk.fillStyle = "pink";
+        mk.fillRect(10, 10, 130, 120);
+
+        mk.fillStyle = "#13f02e";
+        mk.fillRect(70, 70, 120, 120);
+//-------------------------------------------------------------------------
+        var veHinh2 = document.querySelector("#ve_hinh2");
+        var mk2 = veHinh2.getContext("2d");
+
+        mk2.lineWidth = "2";
+        mk2.strokeStyle ='black';
+        mk2.strokeRect(8, 10, 183, 110);
+
+        mk2.arc(100, 40, 60, 0, Math.PI);
+        mk2.strokeStyle = "#05bf3c";
+        mk2.lineWidth = 4;
+        mk2.fillStyle = "#Ff103d";
+        mk2.fill();
+        mk2.stroke();      
+// -------------------------------------------------------------------------
+        // const canvas = document.getElementById("ve_hinh3");
+        // const ctx = canvas.getContext("2d");
+
+        // ctx.beginPath();
+
+        // ctx.moveTo(20,20);
+
+        // ctx.lineTo(175,20);
+        // ctx.lineTo(175,100);
+        // ctx.lineTo(20,100);
+        // ctx.lineTo(20,20);
+        // ctx.stroke();
+//---------------------------------------------------------------------------
+    </script>
+    
+</body>
+</html>
